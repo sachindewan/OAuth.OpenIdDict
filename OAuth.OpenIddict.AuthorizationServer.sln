@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OAuth.OpenIddict.AuthorizationServer", "OAuth.OpenIddict.AuthorizationServer\OAuth.OpenIddict.AuthorizationServer.csproj", "{7C80A6A9-34CB-4061-8ED1-6A6204BBA0A5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OAuth.OpenIddict.ResourceServer", "OAuth.OpenIddict.ResourceServer\OAuth.OpenIddict.ResourceServer.csproj", "{12DD204C-F79F-4F6C-B469-2595EA7DD465}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OAuth.OpenIddict.WebClient", "OAuth.OpenIddict.WebClient\OAuth.OpenIddict.WebClient.csproj", "{BF84FCB9-69B6-441F-B91B-A335A380CD90}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "openiddictwebclient", "openiddictwebclientMvc\openiddictwebclient.csproj", "{14C164AC-1A90-4FD4-8096-A9F60D519F09}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C80A6A9-34CB-4061-8ED1-6A6204BBA0A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C80A6A9-34CB-4061-8ED1-6A6204BBA0A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C80A6A9-34CB-4061-8ED1-6A6204BBA0A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C80A6A9-34CB-4061-8ED1-6A6204BBA0A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12DD204C-F79F-4F6C-B469-2595EA7DD465}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12DD204C-F79F-4F6C-B469-2595EA7DD465}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12DD204C-F79F-4F6C-B469-2595EA7DD465}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12DD204C-F79F-4F6C-B469-2595EA7DD465}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF84FCB9-69B6-441F-B91B-A335A380CD90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF84FCB9-69B6-441F-B91B-A335A380CD90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF84FCB9-69B6-441F-B91B-A335A380CD90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF84FCB9-69B6-441F-B91B-A335A380CD90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14C164AC-1A90-4FD4-8096-A9F60D519F09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14C164AC-1A90-4FD4-8096-A9F60D519F09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14C164AC-1A90-4FD4-8096-A9F60D519F09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14C164AC-1A90-4FD4-8096-A9F60D519F09}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {555362A4-3E63-4AD9-ACA2-05BB65ABE4C6}
+	EndGlobalSection
+EndGlobal
