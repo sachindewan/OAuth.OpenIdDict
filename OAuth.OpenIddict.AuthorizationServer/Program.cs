@@ -20,7 +20,8 @@ builder.Services.AddOpenIddict()
     {
         options.SetAuthorizationEndpointUris("connect/authorize")
                 .SetLogoutEndpointUris("connect/logout")
-                .SetTokenEndpointUris("connect/token");
+                .SetTokenEndpointUris("connect/token")
+                .SetUserinfoEndpointUris("connect/userinfo");
 
         options.RegisterScopes(Scopes.Email, Scopes.Profile, Scopes.Roles);
 
@@ -35,7 +36,8 @@ builder.Services.AddOpenIddict()
         options.UseAspNetCore()
                 .EnableAuthorizationEndpointPassthrough()
                 .EnableLogoutEndpointPassthrough()
-                .EnableTokenEndpointPassthrough();
+                .EnableTokenEndpointPassthrough()
+                .EnableUserinfoEndpointPassthrough();
     });
 // Add services to the container.
 builder.Services.AddTransient<AuthorizationService>();

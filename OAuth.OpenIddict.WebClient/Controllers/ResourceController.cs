@@ -24,7 +24,10 @@ namespace OAuth.OpenIddict.WebClient.Controllers
             // For scenarios where the default authentication handler configured in the ASP.NET Core
             // authentication options shouldn't be used, a specific scheme can be specified here.
             var token = await HttpContext.GetTokenAsync(OpenIddictClientAspNetCoreConstants.Tokens.BackchannelAccessToken);
-            token = await HttpContext.GetTokenAsync("access_token");
+            if(token == null)
+            {
+                token = await HttpContext.GetTokenAsync("access_token");
+            }
             using var client = _httpClientFactory.CreateClient();
 
             using var request = new HttpRequestMessage(HttpMethod.Get, "https://localhost:7002/resources");

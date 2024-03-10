@@ -21,10 +21,12 @@ namespace openiddictwebclient.Controllers
         [Authorize, HttpPost("~/")]
         public async Task<ActionResult> Index(CancellationToken cancellationToken)
         {
+            //[TODO] this is meaning full here, because we have configured openid connect handler 
             // For scenarios where the default authentication handler configured in the ASP.NET Core
             // authentication options shouldn't be used, a specific scheme can be specified here.
             var token = await HttpContext.GetTokenAsync(OpenIddictClientAspNetCoreConstants.Tokens.BackchannelAccessToken);
-
+            var token1 = await HttpContext.GetTokenAsync("access_token");
+            var token2 = await HttpContext.GetTokenAsync("id_token");
             using var client = _httpClientFactory.CreateClient();
 
             using var request = new HttpRequestMessage(HttpMethod.Get, "https://localhost:7002/resources");

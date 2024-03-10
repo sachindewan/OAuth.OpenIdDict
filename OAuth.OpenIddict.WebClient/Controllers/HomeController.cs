@@ -46,7 +46,7 @@ namespace OAuth.OpenIddict.WebClient.Controllers
             };
 
             // Ask the OpenIddict client middleware to redirect the user agent to the identity provider.
-            return Challenge(properties, "oidc");
+            return Challenge(properties, "OauthScheme");
         }
     }
 }

@@ -129,7 +129,8 @@ namespace openiddictwebclient.Controllers
                 // Preserve the access, identity and refresh tokens returned in the token response, if available.
                 OpenIddictClientAspNetCoreConstants.Tokens.BackchannelAccessToken or
                 OpenIddictClientAspNetCoreConstants.Tokens.BackchannelIdentityToken or
-                OpenIddictClientAspNetCoreConstants.Tokens.RefreshToken));
+                OpenIddictClientAspNetCoreConstants.Tokens.RefreshToken
+                ));
 
             // Ask the default sign-in handler to return a new cookie and redirect the
             // user agent to the return URL stored in the authentication properties.
@@ -157,3 +158,4 @@ namespace openiddictwebclient.Controllers
     }
 
 }
+

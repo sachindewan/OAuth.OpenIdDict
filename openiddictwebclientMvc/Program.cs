@@ -95,7 +95,7 @@ builder.Services.AddOpenIddict()
 
             ClientId = "web-client",
             ClientSecret = "901564A5-E7FE-42CB-B10D-61EF6A8F3654",
-            Scopes = { Scopes.Email, Scopes.Profile, "api1" },
+            Scopes = { Scopes.Email, Scopes.Profile, "api1",Scopes.OpenId },
 
             // Note: to mitigate mix-up attacks, it's recommended to use a unique redirection endpoint
             // URI per provider, unless all the registered providers support returning a special "iss"

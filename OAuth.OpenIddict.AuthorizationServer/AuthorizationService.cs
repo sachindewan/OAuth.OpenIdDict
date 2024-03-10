@@ -56,7 +56,12 @@ namespace OAuth.OpenIddict.AuthorizationServer
             if (claim.Type is OpenIddictConstants.Claims.Name or OpenIddictConstants.Claims.Email)
             {
                 destinations.Add(OpenIddictConstants.Destinations.AccessToken);
+                if (identity.HasScope(OpenIddictConstants.Scopes.OpenId))
+                {
+                    destinations.Add(OpenIddictConstants.Destinations.IdentityToken);
+                }
             }
+
 
             return destinations;
         }

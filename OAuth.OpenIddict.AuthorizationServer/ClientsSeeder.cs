@@ -62,7 +62,8 @@ namespace OAuth.OpenIddict.AuthorizationServer
                                 {
                                    new Uri("https://localhost:7002/swagger/oauth2-redirect.html"),
                                    new Uri("https://localhost:7051/swagger/oauth2-redirect.html"),
-                                   new Uri("https://localhost:7153/callback/login/local")
+                                   new Uri("https://localhost:7153/callback/login/local"),
+                                   new Uri("https://oidcdebugger.com/debug")
                                 },
                 PostLogoutRedirectUris =
                                 {

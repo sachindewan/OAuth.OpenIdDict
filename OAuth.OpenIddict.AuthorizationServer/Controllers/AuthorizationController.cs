@@ -10,6 +10,7 @@ using static OpenIddict.Abstractions.OpenIddictConstants;
 using System.Collections.Immutable;
 using System.Security.Claims;
 using System.Web;
+using Microsoft.AspNetCore.Authorization;
 
 namespace OAuth.OpenIddict.AuthorizationServer.Controllers
 {
@@ -102,7 +103,35 @@ namespace OAuth.OpenIddict.AuthorizationServer.Controllers
 
             return SignIn(new ClaimsPrincipal(identity), OpenIddictServerAspNetCoreDefaults.AuthenticationScheme);
         }
+        [Authorize(AuthenticationSchemes = OpenIddictServerAspNetCoreDefaults.AuthenticationScheme)]
+        [HttpGet("~/connect/userinfo"), HttpPost("~/connect/userinfo")]
+        public async Task<IActionResult> AuthorizeInfo()
+        {
+            if (User.GetClaim(Claims.Subject) != Consts.Email)
+            {
+                return Challenge(
+                    authenticationSchemes: OpenIddictServerAspNetCoreDefaults.AuthenticationScheme,
+                    properties: new AuthenticationProperties(new Dictionary<string, string?>
+                    {
+                        [OpenIddictServerAspNetCoreConstants.Properties.Error] = Errors.InvalidToken,
+                        [OpenIddictServerAspNetCoreConstants.Properties.ErrorDescription] =
+                            "The specified access token is bound to an account that no longer exists."
+                    }));
+            }
 
+            var claims = new Dictionary<string, object>(StringComparer.Ordinal)
+            {
+                // Note: the "sub" claim is a mandatory claim and must be included in the JSON response.
+                [Claims.Subject] = Consts.Email
+            };
+
+            if (User.HasScope(Scopes.Email))
+            {
+                claims[Claims.Email] = Consts.Email;
+            }
+
+            return Ok(claims);
+        }
         [HttpPost("~/connect/token")]
         public async Task<IActionResult> Exchange()
         {
